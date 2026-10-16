@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora Scala + Laminar + MongoDB</title>
+  <style>
+    :root { --bg:#fff; --card:#fff; --txt:#000; --muted:#6b7280; --tecla:#fff; --op:#808080; --acao:#00ff00; --igual:#00ff00; --erro:#b91c1c; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#fff; --card:#fff; --txt:#000; --muted:#6b7280; --tecla:#fff; --op:#808080; --acao:#00ff00; --igual:#00ff00; --erro:#b91c1c; }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; }
+    body { min-height:100vh; display:flex; justify-content:center; align-items:center; padding:12px; background:var(--bg); color:var(--txt); font-family:system-ui,sans-serif; }
+    #app { width:100%; display:flex; justify-content:center; }
+    .calc { width:100%; max-width:1450px; height:auto; padding:12px; }
+    h1 { display:none; }
+    .tela { height:70px; padding:6px 12px; text-align:right; overflow:hidden; }
+    .anterior { color:var(--muted); font-size:14px; height:20px; }
+    .valor { font-size:30px; font-weight:600; white-space:nowrap; }
+    .erro { color:var(--erro); font-size:13px; height:18px; margin:4px 0; }
+    .teclas { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
+    .tecla { border:0; border-radius:10px; padding:14px 0; font-size:20px; cursor:pointer; background:var(--tecla); color:var(--txt); outline:1px solid #ddd; }
+    .tecla.op { background:var(--op); }
+    .tecla.acao { background:var(--acao); }
+    .tecla.igual { background:var(--igual); color:#000; font-weight:700; }
+    .tecla:active { transform:scale(.97); }
+    h2 { font-size:14px; margin:0; }
+    .historico { margin-top:10px; }
+    .hist-topo { display:flex; justify-content:space-between; align-items:center; }
+    .limpar { border:0; background:none; color:var(--muted); cursor:pointer; font-size:12px; }
+    ul { list-style:none; padding:0; margin:6px 0 0; max-height:110px; overflow:auto; }
+    li { display:flex; justify-content:space-between; gap:8px; padding:4px; border-bottom:1px solid #ddd; cursor:pointer; font-size:13px; }
+    .he { color:var(--muted); overflow:hidden; text-overflow:ellipsis; }
+    .hr { font-weight:600; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script defer src="/static/main.js"></script>
+</body>
+</html>
